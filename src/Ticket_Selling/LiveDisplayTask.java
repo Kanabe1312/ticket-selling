@@ -13,11 +13,8 @@ public class LiveDisplayTask implements Runnable {
     @Override
     public void run() {
         while (statistics.getProcessed() < 80) {
-            System.out.println();
-            System.out.println("Live Display ");
-            System.out.println("No. of left tikets : "+ ticketStore.getTicketsLeft());
-
-            System.out.println("Processed requests: "+ statistics.getProcessed());
+            System.out.println("[live] bilete ramase: " + ticketStore.getTicketsLeft()
+                    + " (processed: " + statistics.getProcessed() + ")");
             try {
                 Thread.sleep(50);
             }catch (InterruptedException e){
